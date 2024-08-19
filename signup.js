@@ -2,18 +2,17 @@ import {
   auth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-} from "./firebase.js";
+} from "../firebase.js";
 
-let email = document.getElementById('signupEmail');
-let password = document.getElementById('signupPswd');
-let signupBtn = document.getElementById('signupBtn');
+let email = document.getElementById("signupEmail");
+let password = document.getElementById("signupPswd");
+let signupBtn = document.getElementById("signupBtn");
 
 const signUp = (event) => {
-  event.preventDefault()
+  event.preventDefault();
   signupBtn.value = "Loading...";
   createUserWithEmailAndPassword(auth, email.value, password.value)
     .then((user) => {
-      console.log(user)
       Toastify({
         text: "Account created Successfully",
         duration: 3000,
@@ -26,17 +25,17 @@ const signUp = (event) => {
     .catch((error) => {
       signupBtn.value = "Sign UP";
       Toastify({
-        text: `Error Occured : ${error}`,
+        text: `Error Occurred: ${error.message}`,
         duration: 3000,
       }).showToast();
     });
 };
 
+// Handle authentication state changes
 onAuthStateChanged(auth, (user) => {
-  if (user) {
-    window.location.href = './home/home.html';
+  if (user && window.location.pathname.includes("signup")) {
+    window.location.href = "../home/home.html";
   }
 });
 
 signupBtn.addEventListener("click", signUp);
-

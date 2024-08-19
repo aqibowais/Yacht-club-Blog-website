@@ -1,7 +1,8 @@
-import { auth, signOut } from "../firebase.js";
+import { auth, signOut,onAuthStateChanged } from "../firebase.js";
 let logoutBtn = document.getElementById("logout");
 
-const logOut = () => {
+const logOut = (event) => {
+  event.preventDefault()
   signOut(auth)
     .then(() => {
       Toastify({
@@ -18,7 +19,12 @@ const logOut = () => {
       }).showToast();
     });
 };
-
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+    // Redirect to login if not authenticated
+    window.location.href = "../login/login.html";
+  }
+});
 logoutBtn.addEventListener("click", logOut);
 
 
