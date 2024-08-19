@@ -33,7 +33,7 @@ const signUp = (event) => {
 
 // Handle authentication state changes
 onAuthStateChanged(auth, (user) => {
-  if (user && window.location.pathname.includes("signup")) {
+  if (user && window.location.pathname.includes("index")) {
     window.location.href = "../home/home.html";
   }
 });
