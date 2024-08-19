@@ -5,7 +5,7 @@ import {
 } from "../firebase.js";
 
 let email = document.getElementById("signupEmail");
-let password = document.getElementById("signupPswd");
+let password = document.querySelector(".pass-key");
 let signupBtn = document.getElementById("signupBtn");
 
 const signUp = (event) => {
@@ -33,7 +33,7 @@ const signUp = (event) => {
 
 // Handle authentication state changes
 onAuthStateChanged(auth, (user) => {
-  if (user && window.location.pathname.includes("index")) {
+  if (user) {
     window.location.href = "../home/home.html";
   }
 });
