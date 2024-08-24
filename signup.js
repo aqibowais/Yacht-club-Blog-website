@@ -2,7 +2,7 @@ import {
   auth,
   createUserWithEmailAndPassword,
   onAuthStateChanged,
-} from "../firebase.js";
+} from "./firebase.js";
 
 let email = document.getElementById("signupEmail");
 let password = document.querySelector(".pass-key");
