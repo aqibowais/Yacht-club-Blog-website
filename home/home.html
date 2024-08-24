@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yacht Club</title>
 
-
+  <link rel="stylesheet" href="../css/style.css">
   <!-- Bootstrap -->
   <link href="../css/bootstrap.css" rel="stylesheet">
 
@@ -36,9 +36,10 @@
         <ul class="navbar-nav nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#">Destinations</a></li>
-          <li><a href="#">License</a></li>
           <li><a href="#">Contacts</a></li>
+          <li><a id="addBlog">Add Blog</a></li>
           <li><a><input id="logout" type="submit" value="Logout" style="border: none;"></a></li>
+          
         </ul>
       </nav>
     </div>
@@ -222,10 +223,24 @@
     <p>&copy; 2024 Yacht Club. All Rights Reserved. Proudly created by <a href="https://github.com/aqibowais">Aqib Owais</a></p>
   </div>
   <!-- End Footer -->
+   <!-- Add Blog Modal -->
+<div id="addBlogModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h3>Add Blog</h3>
+    <form>
+      <input type="text" id="blogTitle" placeholder="Blog Title" required>
+      <input type="text" id="blogContent" placeholder="Blog Content" required>
+      <input type="file" id="blogImage"  required>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script src="./logout.js" type="module"></script>
+  <script src="./add_blog.js" type="module"></script>
   <script src="../firebase.js" type="module"></script>
 </body>
 </html>

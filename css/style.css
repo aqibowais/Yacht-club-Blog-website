@@ -149,3 +149,78 @@ i span{
 .signup a:hover{
   text-decoration: underline;
 }
+
+#loader {
+  width: 30px;
+  --b: 8px; 
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 1px;
+  background: conic-gradient(#0000 10%,#f03355) content-box;
+  -webkit-mask:
+    repeating-conic-gradient(#0000 0deg,#000 1deg 20deg,#0000 21deg 36deg),
+    radial-gradient(farthest-side,#0000 calc(100% - var(--b) - 1px),#000 calc(100% - var(--b)));
+  -webkit-mask-composite: destination-in;
+          mask-composite: intersect;
+  animation:l4 1s infinite steps(10);
+}
+@keyframes l4 {to{transform: rotate(1turn)}}
+
+/* Modal Container */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+ 
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Close Button */
+.close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Form Styling */
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-content input,
+.modal-content button {
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 700;
+
+}
+
+.modal-content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
+}

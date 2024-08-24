@@ -1,7 +1,9 @@
 import { auth, signOut,onAuthStateChanged } from "../firebase.js";
 let logoutBtn = document.getElementById("logout");
-
+let loader = document.getElementsByClassName('loader')
 const logOut = (event) => {
+  logoutBtn.value = ""
+  logoutBtn.id = 'loader'
   event.preventDefault()
   signOut(auth)
     .then(() => {
@@ -18,6 +20,7 @@ const logOut = (event) => {
         duration: 3000,
       }).showToast();
     });
+    
 };
 onAuthStateChanged(auth, (user) => {
   if (!user) {
