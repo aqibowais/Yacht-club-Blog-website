@@ -34,7 +34,7 @@ const login = (event) => {
 
 // Handle authentication state changes
 onAuthStateChanged(auth, (user) => {
-  if (user && window.location.pathname.includes("login")) {
+  if (user) {
     window.location.href = "../home/home.html";
   }
 });
