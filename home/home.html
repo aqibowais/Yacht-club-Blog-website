@@ -9,6 +9,11 @@
   <title>Yacht Club</title>
 
   <link rel="stylesheet" href="../css/style.css">
+  <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
   <!-- Bootstrap -->
   <link href="../css/bootstrap.css" rel="stylesheet">
 
@@ -232,13 +237,15 @@
       <input type="text" id="blogTitle" placeholder="Blog Title" required>
       <input type="text" id="blogContent" placeholder="Blog Content" required>
       <input type="file" id="blogImage"  required>
-      <button type="submit">Submit</button>
+      <button id="submit" type="submit">Submit<div id="loader" style="display:none"></div></button>
     </form>
   </div>
 </div>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  
   <script src="./logout.js" type="module"></script>
   <script src="./add_blog.js" type="module"></script>
   <script src="../firebase.js" type="module"></script>
